@@ -11,24 +11,15 @@
 
 / {
     behaviors {
-        hml: homewrow_mods_left {
+        hm: homewrow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_LEFT_HAND";
+            label = "HOMEROW_MODS";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            hold-trigger-key-positions = <6 18 30 31 19 7 8 20 32 33 21 9 10 22 34 11 23 35 41 40 39>;
-        };
-
-        hmr: homewrow_mods_right {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_RIGHT_HAND";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
         };
     };
 
@@ -38,13 +29,13 @@
         copy_ {
             bindings = <&kp LC(LS(C))>;
             key-positions = <1 2>;
-            layers = <0 1 2 3>;
+            layers = <0 1 2>;
         };
 
         paste_ {
             bindings = <&kp LC(LS(V))>;
             key-positions = <3 4>;
-            layers = <0 1 2 3>;
+            layers = <0 1 2>;
         };
 
         caps {
@@ -56,19 +47,18 @@
         copy {
             bindings = <&kp RC(C)>;
             key-positions = <25 27>;
-            layers = <0 1 2 3>;
+            layers = <0 1 2>;
         };
 
         paste {
             bindings = <&kp RC(V)>;
             key-positions = <25 28>;
-            layers = <0 1 2 3>;
+            layers = <0 1 2>;
         };
 
         delete {
             bindings = <&kp DEL>;
             key-positions = <4 5>;
-            layers = <0 1 2 3>;
         };
     };
 
@@ -77,28 +67,28 @@
 
         qwerty {
             bindings = <
-&kp TAB    &kp Q         &kp W         &kp E        &kp R        &kp T              &kp Y            &kp U        &kp I        &kp O         &kp P            &kp BSPC
-&kp ESC    &hml LCTRL A  &hml LSHFT S  &hml LALT D  &hml LGUI F  &kp G              &kp H            &hmr RGUI J  &hmr RALT K  &hmr RSHFT L  &hmr RCTRL SEMI  &kp SQT
-&kp LCTRL  &kp Z         &kp X         &kp C        &kp V        &kp B              &kp N            &kp M        &kp COMMA    &kp DOT       &kp FSLH         &lt 4 ENTER
-                                       &kp LGUI     &mo 5        &mt LSHFT SPACE    &mt RSHFT ENTER  &mo 6        &kp RALT
+&kp TAB    &kp Q        &kp W       &kp E       &kp R  &kp T              &kp Y            &kp U  &kp I       &kp O       &kp P           &kp BSPC
+&kp ESC    &hm LSHFT A  &hm LALT S  &hm LGUI D  &kp F  &kp G              &kp H            &kp J  &hm RGUI K  &hm RALT L  &hm RSHFT SEMI  &hm RCTRL SQT
+&kp LCTRL  &kp Z        &kp X       &kp C       &kp V  &kp B              &kp N            &kp M  &kp COMMA   &kp DOT     &kp FSLH        &lt 4 ENTER
+                                    &kp LGUI    &mo 5  &mt LSHFT SPACE    &mt RSHFT ENTER  &mo 6  &kp RALT
             >;
         };
 
         colemak {
             bindings = <
-&trans  &kp Q         &kp W         &kp F        &kp P        &kp G     &kp J   &kp L        &kp U        &kp Y         &kp SEMI      &trans
-&trans  &hml LCTRL A  &hml LSHFT R  &hml LALT S  &hml LGUI T  &kp D     &kp H   &hmr RGUI N  &hmr RALT E  &hmr RSHFT I  &hmr RCTRL O  &kp APOS
-&trans  &kp Z         &kp X         &kp C        &kp V        &kp B     &kp K   &kp M        &kp COMMA    &kp DOT       &kp FSLH      &trans
-                                    &trans       &trans       &trans    &trans  &trans       &trans
+&trans  &kp Q        &kp W       &kp F       &kp P   &kp G     &kp J   &kp L   &kp U       &kp Y       &kp SEMI     &trans
+&trans  &hm LSHFT A  &hm LALT R  &hm LGUI S  &kp T   &kp D     &kp H   &kp N   &hm RGUI E  &hm RALT I  &hm RSHFT O  &hm RCTRL SQT
+&trans  &kp Z        &kp X       &kp C       &kp V   &kp B     &kp K   &kp M   &kp COMMA   &kp DOT     &kp FSLH     &trans
+                                 &trans      &trans  &trans    &trans  &trans  &trans
             >;
         };
 
         dvorak {
             bindings = <
-&trans  &kp SQT       &kp COMMA     &kp DOT      &kp P        &kp Y     &kp F   &kp G        &kp C        &kp R         &kp L         &trans
-&trans  &hml LCTRL A  &hml LSHFT O  &hml LALT E  &hml LGUI U  &kp I     &kp D   &hmr RGUI H  &hmr RALT T  &hmr RSHFT N  &hmr RCTRL S  &kp MINUS
-&trans  &kp SEMI      &kp Q         &kp J        &kp K        &kp X     &kp B   &kp M        &kp W        &kp V         &kp Z         &trans
-                                    &trans       &trans       &trans    &trans  &trans       &trans
+&trans  &kp SQT      &kp COMMA   &kp DOT     &kp P   &kp Y     &kp F   &kp G   &kp C       &kp R       &kp L        &trans
+&trans  &hm LSHFT A  &hm LALT O  &hm LGUI E  &kp U   &kp I     &kp D   &kp H   &hm RGUI T  &hm RALT N  &hm RSHFT S  &hm RCTRL MINUS
+&trans  &kp SEMI     &kp Q       &kp J       &kp K   &kp X     &kp B   &kp M   &kp W       &kp V       &kp Z        &trans
+                                 &trans      &trans  &trans    &trans  &trans  &trans
             >;
         };
 
@@ -123,8 +113,8 @@
         lower {
             bindings = <
 &kp GRAVE  &kp N1  &kp N2    &kp N3    &kp N4     &kp N5    &kp N6  &kp N7    &kp N8    &kp N9     &kp N0     &kp BSLH
-&trans     &trans  &trans    &kp UP    &trans     &trans    &none   &kp LBKT  &kp RBKT  &kp MINUS  &kp EQUAL  &kp FSLH
-&trans     &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans    &none   &kp LPAR  &kp RPAR  &kp LT     &kp GT     &trans
+&trans     &none   &none     &kp UP    &none      &none     &none   &kp LBKT  &kp RBKT  &kp MINUS  &kp EQUAL  &kp FSLH
+&trans     &none   &kp LEFT  &kp DOWN  &kp RIGHT  &none     &none   &kp LPAR  &kp RPAR  &kp LT     &kp GT     &trans
                              &trans    &trans     &trans    &trans  &trans    &trans
             >;
         };
@@ -132,8 +122,8 @@
         raise {
             bindings = <
 &kp TILDE  &kp EXCL  &kp AT_SIGN  &kp HASH  &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &trans
-&trans     &trans    &trans       &kp UP    &trans     &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &none
-&trans     &trans    &kp LEFT     &kp DOWN  &kp RIGHT  &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &trans
+&trans     &none     &none        &kp UP    &none      &none        &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &none
+&trans     &none     &kp LEFT     &kp DOWN  &kp RIGHT  &none        &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &trans
                                   &trans    &trans     &trans       &trans     &trans     &trans
             >;
         };
