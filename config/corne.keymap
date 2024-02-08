@@ -7,7 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-// #include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/mouse.h>
 
 / {
     behaviors {
@@ -17,7 +17,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <500>;
+            tapping-term-ms = <350>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
         };
@@ -60,7 +60,14 @@
             bindings = <&kp DEL>;
             key-positions = <4 5>;
         };
+
+        l-enter {
+            bindings = <&kp ENTER>;
+            key-positions = <29 28>;
+        };
     };
+
+    &lt { tapping-term-ms = <250>; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -94,10 +101,10 @@
 
         mouse_nums {
             bindings = <
-&trans  &none  &none  &none        &none        &kp KP_NUM      &kp KP_PLUS      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_SUBTRACT  &trans
-&trans  &none  &none  &none        &none        &kp KP_COMMA    &kp KP_EQUAL     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_NUMBER_0  &kp KP_DOT
-&trans  &none  &none  &kp KP_LPAR  &kp KP_RPAR  &none           &kp KP_MULTIPLY  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_DIVIDE    &trans
-                      &trans       &trans       &trans          &kp KP_ENTER     &trans           &trans
+&trans  &none  &mkp LCLK       &mmv MOVE_UP    &mkp RCLK       &kp KP_NUM      &kp KP_PLUS      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_SUBTRACT  &trans
+&trans  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGH  &kp KP_COMMA    &kp KP_EQUAL     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_NUMBER_0  &kp KP_DOT
+&trans  &none  &none           &kp KP_LPAR     &kp KP_RPAR     &none           &kp KP_MULTIPLY  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_DIVIDE    &trans
+                               &trans          &trans          &trans          &kp KP_ENTER     &trans           &trans
             >;
         };
 
