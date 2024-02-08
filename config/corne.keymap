@@ -7,7 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/mouse.h>
+// #include <dt-bindings/zmk/mouse.h>
 
 / {
     behaviors {
@@ -67,17 +67,15 @@
         };
     };
 
-    &lt { tapping-term-ms = <250>; };
-
     keymap {
         compatible = "zmk,keymap";
 
         qwerty {
             bindings = <
-&kp TAB    &kp Q        &kp W       &kp E       &kp R        &kp T              &kp Y            &kp U  &kp I       &kp O       &kp P           &kp BSPC
-&kp ESC    &hm LSHFT A  &hm LALT S  &hm LGUI D  &kp F        &kp G              &kp H            &kp J  &hm RGUI K  &hm RALT L  &hm RSHFT SEMI  &hm RCTRL SQT
-&kp LCTRL  &kp Z        &kp X       &kp C       &kp V        &kp B              &kp N            &kp M  &kp COMMA   &kp DOT     &kp FSLH        &lt 4 ENTER
-                                    &kp LGUI    &lt 5 ENTER  &mt LSHFT SPACE    &mt RSHFT ENTER  &mo 6  &kp RALT
+&kp TAB    &kp Q        &kp W       &kp E       &kp R  &kp T              &kp Y            &kp U  &kp I       &kp O       &kp P           &kp BSPC
+&kp ESC    &hm LSHFT A  &hm LALT S  &hm LGUI D  &kp F  &kp G              &kp H            &kp J  &hm RGUI K  &hm RALT L  &hm RSHFT SEMI  &hm RCTRL SQT
+&kp LCTRL  &kp Z        &kp X       &kp C       &kp V  &kp B              &kp N            &kp M  &kp COMMA   &kp DOT     &kp FSLH        &lt 4 ENTER
+                                    &kp LGUI    &mo 5  &mt LSHFT SPACE    &mt RSHFT ENTER  &mo 6  &kp RALT
             >;
         };
 
