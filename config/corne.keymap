@@ -70,19 +70,27 @@
             bindings = <&kp BSPC>;
             key-positions = <17 16>;
         };
-    };
 
-    
+        bspc_del {
+            bindings = <&kp DEL>;
+            key-positions = <11 10>;
+        };
+
+        toggle_special {
+            bindings = <&tog 4>;
+            key-positions = <33 34 35>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
 
         qwerty {
             bindings = <
-&kp TAB    &kp Q        &kp W       &kp E       &kp R        &kp T              &kp Y            &kp U  &kp I       &kp O       &kp P           &kp BSPC
-&kp ESC    &hm LSHFT A  &hm LALT S  &hm LGUI D  &kp F        &kp G              &kp H            &kp J  &hm RGUI K  &hm RALT L  &hm RSHFT SEMI  &hm RCTRL SQT
-&kp LCTRL  &kp Z        &kp X       &kp C       &kp V        &kp B              &kp N            &kp M  &kp COMMA   &kp DOT     &kp FSLH        &lt 4 ENTER
-                                    &kp LGUI    &lt 5 ENTER  &mt LSHFT SPACE    &mt RSHFT ENTER  &mo 6  &kp RALT
+&kp TAB    &kp Q        &kp W       &kp E       &kp R  &kp T              &kp Y            &kp U  &kp I       &kp O       &kp P           &kp BSPC
+&kp ESC    &hm LSHFT A  &hm LALT S  &hm LGUI D  &kp F  &kp G              &kp H            &kp J  &hm RGUI K  &hm RALT L  &hm RSHFT SEMI  &hm RCTRL SQT
+&kp LCTRL  &kp Z        &kp X       &kp C       &kp V  &kp B              &kp N            &kp M  &kp COMMA   &kp DOT     &kp FSLH        &lt 5 ENTER
+                                    &kp LGUI    &mo 6  &mt LSHFT SPACE    &mt RSHFT ENTER  &mo 7  &kp RALT
             >;
         };
 
@@ -110,6 +118,15 @@
 &trans  &none  &none  &none        &none        &kp KP_COMMA    &kp KP_EQUAL     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_NUMBER_0  &kp KP_DOT
 &trans  &none  &none  &kp KP_LPAR  &kp KP_RPAR  &none           &kp KP_MULTIPLY  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_DIVIDE    &trans
                       &trans       &trans       &trans          &kp KP_ENTER     &trans           &trans
+            >;
+        };
+
+        SPECIAL {
+            bindings = <
+&none  &none  &none  &none  &none   &none    &none  &none   &none     &none     &none   &none
+&none  &none  &none  &none  &none   &none    &none  &none   &none     &none     &none   &none
+&none  &none  &none  &none  &none   &none    &none  &none   &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT
+                     &none  &trans  &none    &none  &trans  &none
             >;
         };
 
@@ -154,8 +171,9 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer {
-            if-layers = <5 6>;
-            then-layer = <7>;
+            if-layers = <6 7>;
+            then-layer = <8>;
         };
     };
 };
+
