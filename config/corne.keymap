@@ -106,6 +106,7 @@
         next_tab {
             bindings = <&kp LC(TAB)>;
             key-positions = <10 9>;
+            layers = <0 1 2>;
         };
 
         close_tab {
