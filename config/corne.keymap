@@ -88,7 +88,7 @@
         toggle_special {
             bindings = <&tog 4>;
             key-positions = <33 34 35>;
-            layers = <0 1 2>;
+            layers = <0 1 2 4>;
         };
 
         bspc_del {
