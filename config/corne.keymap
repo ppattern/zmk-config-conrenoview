@@ -29,72 +29,61 @@
         copy_ {
             bindings = <&kp LC(LS(C))>;
             key-positions = <1 2>;
-            layers = <0 1 2 3 6 7 8>;
         };
 
         paste_ {
             bindings = <&kp LC(LS(V))>;
             key-positions = <3 4>;
-            layers = <0 1 2 3 6 7 8>;
         };
 
         caps {
             bindings = <&kp CAPS>;
             key-positions = <17 18>;
-            layers = <0 1 2 3 6 7 8>;
         };
 
         all {
             bindings = <&kp LC(A)>;
             key-positions = <25 13>;
-            layers = <0 1 2 3 6 7 8>;
         };
 
         save {
             bindings = <&kp LC(S)>;
             key-positions = <25 14>;
-            layers = <0 1 2 3 6 7 8>;
         };
 
         cut {
             bindings = <&kp LC(X)>;
             key-positions = <25 26>;
-            layers = <0 1 2 3 6 7 8>;
         };
 
         copy {
             bindings = <&kp LC(C)>;
             key-positions = <25 27>;
-            layers = <0 1 2 3 6 7 8>;
         };
 
         paste {
             bindings = <&kp LC(V)>;
             key-positions = <25 28>;
-            layers = <0 1 2 3 6 7 8>;
         };
 
         left_delete {
             bindings = <&kp DEL>;
             key-positions = <4 5>;
-            layers = <0 1 2 3 6 7 8>;
         };
 
         left_bspc {
             bindings = <&kp BSPC>;
             key-positions = <17 16>;
-            layers = <0 1 2 3 6 7 8>;
         };
 
         left_enter {
             bindings = <&kp ENTER>;
             key-positions = <29 28>;
-            layers = <0 1 2 3 6 7 8>;
         };
 
-        toggle_mouse {
-            bindings = <&tog 4>;
-            key-positions = <33 34 35>;
+        toggle_mouse { 
+          bindings = <&tog 4>;
+          key-positions = <33 34 35>;
         };
 
         bspc_del {
@@ -175,19 +164,19 @@
 
         num {
             bindings = <
-&trans  &none  &none  &none        &none        &none        &kp KP_PLUS      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_SUBTRACT  &trans
-&trans  &none  &none  &none        &none        &kp COMMA    &kp KP_EQUAL     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_NUMBER_0  &kp KP_DOT
-&trans  &none  &none  &kp KP_LPAR  &kp KP_RPAR  &kp CARET    &kp KP_MULTIPLY  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_DIVIDE    &lt 5 PERCENT
-                      &trans       &trans       &trans       &kp KP_ENTER     &trans           &trans
+&trans  &none      &none      &kp PLUS              &kp MINUS              &none          &kp KP_PLUS      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_SUBTRACT  &trans
+&trans  &kp COMMA  &kp EQUAL  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOT        &kp KP_EQUAL     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_NUMBER_0  &kp KP_DOT
+&trans  &none      &kp CARET  &kp ASTRK             &kp SLASH              &kp PERCENT    &kp KP_MULTIPLY  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_DIVIDE    &lt 5 PERCENT
+                              &trans                &trans                 &trans         &kp KP_ENTER     &trans           &trans
             >;
         };
 
         mouse {
             bindings = <
-&none  &none  &none     &none     &none      &none     &none   &none   &none     &none     &none   &none
-&none  &none  &none     &kp UP    &none      &none     &none   &none   &none     &none     &none   &none
-&none  &none  &kp LEFT  &kp DOWN  &kp RIGHT  &none     &none   &none   &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT
-                        &trans    &trans     &trans    &trans  &trans  &trans
+&trans  &none  &none     &none     &none      &none     &none   &none   &none     &none     &none   &trans
+&trans  &none  &none     &kp UP    &none      &none     &none   &none   &none     &none     &none   &trans
+&trans  &none  &kp LEFT  &kp DOWN  &kp RIGHT  &none     &none   &none   &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT
+                         &trans    &trans     &trans    &trans  &trans  &trans
             >;
         };
 
@@ -237,4 +226,5 @@
         };
     };
 };
+
 
