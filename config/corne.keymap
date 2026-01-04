@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-/*    behaviors {
+    behaviors {
         hm: homewrow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -21,7 +21,7 @@
             flavor = "tap-preferred";
         };
     };
-*/
+
 
     combos {
         compatible = "zmk,combos";
