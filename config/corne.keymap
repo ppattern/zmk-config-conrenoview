@@ -9,20 +9,6 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    behaviors {
-        hm: homewrow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <350>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-        };
-    };
-
-
     combos {
         compatible = "zmk,combos";
 
@@ -178,10 +164,10 @@
         mouse {
             display-name = "Mouse";
             bindings = <
-&trans  &none  &none     &none     &none      &none     &none   &none   &none     &none     &none   &trans
-&trans  &none  &none     &kp UP    &none      &none     &none   &none   &none     &none     &none   &trans
-&trans  &none  &kp LEFT  &kp DOWN  &kp RIGHT  &none     &none   &none   &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT
-                         &trans    &trans     &trans    &trans  &trans  &trans
+&trans  &none  &none     &none     &none      &none     &mkp MB4  &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &msc SCRL_UP     &trans
+&trans  &none  &none     &kp UP    &none      &none     &mkp MB5  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN   &trans
+&trans  &none  &kp LEFT  &kp DOWN  &kp RIGHT  &none     &none     &none           &mkp MCLK       &msc SCRL_LEFT   &msc SCRL_RIGHT  &trans
+                         &trans    &trans     &trans    &trans    &trans          &trans
             >;
         };
 
@@ -198,20 +184,20 @@
         lower {
             display-name = "Lower";
             bindings = <
-&kp GRAVE  &kp N1     &kp N2     &kp N3    &kp N4     &kp N5    &kp N6    &kp N7    &kp N8    &kp N9     &kp N0     &trans
-&trans     &kp UNDER  &kp COMMA  &kp UP    &kp DOT    &kp N0    &kp BSLH  &kp LBKT  &kp RBKT  &kp MINUS  &kp EQUAL  &kp FSLH
-&trans     &none      &kp LEFT   &kp DOWN  &kp RIGHT  &none     &kp PIPE  &kp LPAR  &kp RPAR  &kp LT     &kp GT     &trans
-                                 &trans    &trans     &trans    &trans    &trans    &trans
+&kp GRAVE  &kp N1   &kp N2    &kp N3  &kp N4    &kp N5       &kp N6    &kp N7          &kp N8           &kp N9     &kp N0     &trans
+&kp COMMA  &kp N6   &kp N7    &kp N8  &kp N9    &kp N0       &kp BSLH  &kp LBKT        &kp RBKT         &kp MINUS  &kp EQUAL  &kp FSLH
+&trans     &kp DOT  &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT    &kp PIPE  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp UNDER  &kp PLUS   &kp QMARK
+                              &trans  &trans    &trans       &trans    &trans          &trans
             >;
         };
 
         raise {
             display-name = "Raise";
             bindings = <
-&kp TILDE  &kp EXCL  &kp AT_SIGN  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &trans
-&trans     &none     &kp LT       &kp FSLH  &kp GT    &none        &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp FSLH
-&trans     &none     &none        &none     &none     &none        &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp QMARK
-                                  &trans    &trans    &trans       &trans     &trans     &trans
+&kp TILDE  &kp EXCL  &kp AT_SIGN  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &trans
+&trans     &kp PLUS  &kp MINUS    &kp LPAR  &kp RPAR  &none        &none      &kp LBKT  &kp RBKT   &none     &kp BSLH  &kp FSLH
+&trans     &kp STAR  &kp SLASH    &kp LT    &kp GT    &none        &none      &kp LBRC  &kp RBRC   &none     &kp PIPE  &kp QMARK
+                                  &trans    &trans    &trans       &trans     &trans    &trans
             >;
         };
 
