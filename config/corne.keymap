@@ -212,8 +212,8 @@
             >;
         };
 
-        lower_Q {
-            display-name = "Lower";
+        lowerQ {
+            display-name = "LowerQ";
             bindings = <
 &kp GRAVE  &kp N1  &kp N2    &kp N3  &kp N4    &kp N5       &kp N6    &kp N7          &kp N8     &kp N9             &kp N0    &trans
 &kp V      &kp N6  &kp N7    &kp N8  &kp N9    &kp N0       &kp BSLH  &kp MINUS       &kp EQUAL  &kp SINGLE_QUOTE   &kp RBKT  &kp LBKT
@@ -222,8 +222,8 @@
             >;
         };
 
-        raise_Q {
-            display-name = "Raise";
+        raiseQ {
+            display-name = "RaiseQ";
             bindings = <
 &kp TILDE  &kp EXCL  &kp AT_SIGN  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &trans
 &trans     &kp PLUS  &kp MINUS    &kp LPAR  &kp RPAR  &none        &none      &kp LBKT  &kp RBKT   &none     &kp BSLH  &kp FSLH
@@ -238,8 +238,6 @@
 
         tri_layer {
             if-layers = <5 6>;
-            then-layer = <7>;
-            if-layers = <8 9>;
             then-layer = <7>;
         };
     };
